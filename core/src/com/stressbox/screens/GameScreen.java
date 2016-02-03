@@ -31,6 +31,9 @@ public class GameScreen implements Screen {
 		viewport.apply();
 		
 		camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
+		camera.update();
+		
+		world = new World(stressbox);
 		
 	}
 	

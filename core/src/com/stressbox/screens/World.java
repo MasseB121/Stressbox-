@@ -2,34 +2,44 @@ package com.stressbox.screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.stressbox.Main;
 import com.stressbox.gameobjects.Ball;
 import com.stressbox.gameobjects.Padel;
 
 public class World {
 	
-	Game stressbox;
+	Main stressbox;
 	Ball ball;
 	Padel padel; //objects, other classes
 	
+	Texture white;
+	
 	public int playerPoints;
+	public boolean isAlive = true;
 
-	public World(final Game stressbox){
+	public World(final Main stressbox){
 		this.stressbox = stressbox;
 		
-		//white = new Texture(Gdx.files.internal(""); //white in assets folder, TODO 
-		
 		ball = new Ball();
+		padel = new Padel(ball, Padel.WIDTH, 10);
 		
-		padel = new Padel(ball, 10, 640);
+		white = new Texture(Gdx.files.internal("padel.png"));
 	}
 	
-	public void update(float delta){
-
-		padel.move(padel.xPadel, delta);
-		
+	public void update(float delta){ 
+		padel.update(delta);
 	}
 	
 	public void draw() {
-		
+		drawPadel();
+	}
+	
+	public void drawPadel(){
+		stressbox.batch.draw(white, padel.xPadel, padel.yPadel, Padel.WIDTH, Padel.HEIGHT);
+	}
+	
+	public void gameOver(){
+		//if() //ball at y value..
 	}
 }
