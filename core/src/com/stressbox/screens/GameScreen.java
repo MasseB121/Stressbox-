@@ -30,7 +30,7 @@ public class GameScreen implements Screen {
 		viewport  = new StretchViewport(Main.VIRUTAL_WIDTH, Main.VIRUTAL_HEIGHT, camera);
 		viewport.apply();
 		
-		camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
+		camera.position.set(camera.viewportWidth, camera.viewportHeight, 0);
 		camera.update();
 		
 		world = new World(stressbox);
@@ -72,7 +72,7 @@ public class GameScreen implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		viewport.update(width, height);
-		camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
+		camera.position.set(camera.viewportWidth /2 , camera.viewportHeight /2, 0);
 	}
 
 	@Override

@@ -34,18 +34,18 @@ public class Padel {
 	public void move(float x, float delta){
 		
 		//TODO
-		if (xPadel > 0 && xPadel < Main.VIRUTAL_WIDTH){
+		if (xPadel >= 0 && xPadel < Main.VIRUTAL_WIDTH){
 			if(Gdx.input.isKeyPressed(Keys.LEFT)){
 				this.xPadel -= xSpeed * delta;
-				if(xPadel <= 0){
-					xPadel += 500;
-				}
+				//if(xPadel <= 0){
+					//xPadel += 500;
+				//}
 			  }
 			  if(Gdx.input.isKeyPressed(Keys.RIGHT)){
 				this.xPadel += xSpeed * delta;
-				if(xPadel >= 1000){
-					xPadel =- 500;
-				}
+				//if(xPadel >= 1000){
+					//xPadel =- 00;
+				//}
 			  }
 		
 		}
