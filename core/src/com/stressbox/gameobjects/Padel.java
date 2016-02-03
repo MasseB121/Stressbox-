@@ -18,6 +18,8 @@ public class Padel {
 	public float yPadel;
 	public float xSpeed = 500.0f;
 	
+	public boolean onTouch = true;
+	
 	public Padel(Ball ball, float x, float y){
 		this.xPadel = x;
 		this.yPadel = y;
