@@ -11,14 +11,14 @@ public class Padel {
 	Ball ball; 
 	Main stressbox;
 	
-	public static final float WIDTH = 150;
-	public static final float HEIGHT = 20;
+	public static final float WIDTH = 110;
+	public static final float HEIGHT = 10;
+	public static final float PADEL_SPEED = 500.0f;
+	
+	public float speed = PADEL_SPEED;
 	
 	public float xPadel = 0;
-	public float yPadel;
-	public float xSpeed = 500.0f;
-	
-	public boolean onTouch = true;
+	public float yPadel; // maybe unnecesary...
 	
 	public Padel(Ball ball, float x, float y){
 		this.xPadel = x;
@@ -29,19 +29,21 @@ public class Padel {
 	}
 	
 	public void update(float delta){
-		move(delta);
+		input(delta);
 	}
 	
 	
-	public void move(float delta){
+	public void input(float delta){
+		
+		// Padel Movement
 	
 		if (this.xPadel >= 0 && this.xPadel < Main.VIRUTAL_WIDTH - WIDTH){ 
 			if(Gdx.input.isKeyPressed(Keys.LEFT)){
-				this.xPadel -= xSpeed * delta;
+				this.xPadel -= speed* delta;
 			  }
 			
 			  if(Gdx.input.isKeyPressed(Keys.RIGHT)){
-				this.xPadel += xSpeed * delta;
+				this.xPadel += speed * delta;
 			  }
 		}
 		
@@ -52,7 +54,6 @@ public class Padel {
 		if(xPadel >= Main.VIRUTAL_WIDTH - WIDTH){
 			xPadel--;
 		}
-
 	}
 	
 	public void setX(float x) {

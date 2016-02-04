@@ -21,7 +21,7 @@ public class MenuScreen implements Screen{
 	
 	Sprite sprite;
 	Sprite start;
-	
+
 	public MenuScreen(final Main stressbox){
 		this.stressbox = stressbox;
 
@@ -32,8 +32,8 @@ public class MenuScreen implements Screen{
         sprite = new Sprite(new Texture(Gdx.files.internal("start.png")));
         start = new Sprite(new Texture(Gdx.files.internal("start.jpg")));
         
-        start.setX(Main.VIRUTAL_WIDTH / 2);
-        start.setY(Main.VIRUTAL_HEIGHT / 2 * 3);
+        start.setX(Main.VIRUTAL_WIDTH / 4);
+        start.setY(Main.VIRUTAL_HEIGHT / 2);
 
         camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
 
@@ -58,7 +58,7 @@ public class MenuScreen implements Screen{
 		
 		if(Gdx.input.isButtonPressed(Keys.ENTER)){
 			stressbox.setScreen(new GameScreen(stressbox));
-			Gdx.app.log("", "ok");
+			Gdx.app.log("", "Screen is ok!");
 		}
 		stressbox.batch.end();
 	}

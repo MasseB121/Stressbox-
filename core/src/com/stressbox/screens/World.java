@@ -21,8 +21,8 @@ public class World {
 	public World(final Main stressbox){
 		this.stressbox = stressbox;
 		
-		ball = new Ball();
-		padel = new Padel(ball, Padel.WIDTH, 10);
+		ball = new Ball(padel);
+		padel = new Padel(ball, Padel.WIDTH, Padel.HEIGHT);
 		
 		white = new Texture(Gdx.files.internal("padel.png"));
 	}

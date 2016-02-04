@@ -12,8 +12,8 @@ public class Main extends Game {
 	
 	public SpriteBatch batch;
 	
-	public static final int VIRUTAL_WIDTH = 720;
-	public static final int VIRUTAL_HEIGHT = 1000;
+	public static final int VIRUTAL_WIDTH = 520;
+	public static final int VIRUTAL_HEIGHT = 700;
 	
 	@Override
 	public void create(){

@@ -14,14 +14,12 @@ import com.stressbox.Main;
 public class GameScreen implements Screen {
 	
 	final Main stressbox;
+	World world;
 	
 	OrthographicCamera camera;
 	Viewport viewport;
 	
-	World world;
-	
 	boolean gameOver = false;
-
 	
 	public GameScreen(final Main stressbox){
 		this.stressbox = stressbox;
@@ -53,6 +51,7 @@ public class GameScreen implements Screen {
 		stressbox.batch.setProjectionMatrix(camera.combined);
 		
 		update(delta);
+		
 		stressbox.batch.begin();
 		draw();
         stressbox.batch.end();
@@ -61,6 +60,9 @@ public class GameScreen implements Screen {
 	public void update(float delta){
 		if(!gameOver){
 			world.update(delta);
+		}
+		if(gameOver){
+			stressbox.setScreen(new MenuScreen(stressbox));
 		}
 		
 	}
@@ -72,7 +74,7 @@ public class GameScreen implements Screen {
 	@Override
 	public void resize(int width, int height) {
 		viewport.update(width, height);
-		camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2 , 0);
+		camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
 	}
 
 	@Override
