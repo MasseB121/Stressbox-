@@ -29,27 +29,28 @@ public class Padel {
 	}
 	
 	public void update(float delta){
-		move(xPadel, delta);
+		move(delta);
 	}
 	
 	
-	public void move(float x, float delta){
-		
-		//TODO
-		if (xPadel >= 0 && xPadel < Main.VIRUTAL_WIDTH / 2){
+	public void move(float delta){
+	
+		if (this.xPadel >= 0 && this.xPadel < Main.VIRUTAL_WIDTH - WIDTH){ 
 			if(Gdx.input.isKeyPressed(Keys.LEFT)){
 				this.xPadel -= xSpeed * delta;
-				if(xPadel <= 0){
-					xPadel += 500;
-				}
 			  }
+			
 			  if(Gdx.input.isKeyPressed(Keys.RIGHT)){
 				this.xPadel += xSpeed * delta;
-				//if(xPadel >= 1000){
-					//xPadel =- 00;
-				//}
 			  }
+		}
 		
+		if(xPadel <= 0){
+			xPadel++;
+		}
+		
+		if(xPadel >= Main.VIRUTAL_WIDTH - WIDTH){
+			xPadel--;
 		}
 
 	}

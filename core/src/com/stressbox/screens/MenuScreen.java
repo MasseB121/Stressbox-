@@ -1,4 +1,4 @@
-package com.stressbox;
+package com.stressbox.screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.stressbox.Main;
 import com.stressbox.screens.GameScreen;
 
 public class MenuScreen implements Screen{
