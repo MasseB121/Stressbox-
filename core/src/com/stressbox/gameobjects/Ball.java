@@ -7,27 +7,26 @@ public class Ball {
 	Main stressbox;
 	Padel padel;
 	
-	public static final float BALL_SPEED = Padel.PADEL_SPEED;
+        public static final float BALL_SPEED = 500.0f;
+	public static final float D = Padel.HEIGHT; 
+	 
+	public float speed = BALL_SPEED; 
 	
-	public static final float D = Padel.HEIGHT;
+	public float xBall = Main.VIRUTAL_HEIGHT /2;
+	public float yBall = Main.VIRUTAL_WIDTH / 2;
 	
 	public Ball(Padel padel){
 		this.padel = padel;
 	}
 	
-    public void move(){
-		
+        public void move(float delta){
+		if(xBall <= Main.VIRUTAL_WIDTH && 0 < xBall ){
+			this.xBall *=  speed * delta;
+	        }
 	}
 
 	public void update(float delta){
 	
 	}
 	
-	public void gameOver(){
-		
-	}
-	
-	public boolean isGameOver(){
-		return true;
-	}
 }
